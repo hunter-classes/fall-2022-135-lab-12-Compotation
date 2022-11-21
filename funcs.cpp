@@ -1,3 +1,4 @@
+#include <iostream>
 #include "funcs.h"
 
 std::vector<int> makeVector(int n) {
@@ -5,7 +6,7 @@ std::vector<int> makeVector(int n) {
   if (n < 1) {
     return res;
   }
-  
+
   res.reserve(n);
   for (int i = 0; i < n; i++) {
     res.push_back(i);
@@ -22,4 +23,16 @@ std::vector<int> goodVibes(const std::vector<int> &v) {
     }
   }
   return result;
+}
+
+void printVector(const std::vector<int> &vector) {
+  bool firstElement = true;
+  for (auto e: vector) {
+    if (!firstElement) {
+      std::cout << "," << e;
+    } else {
+      std::cout << e;
+      firstElement = false;
+    }
+  }
 }
