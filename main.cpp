@@ -16,4 +16,9 @@ int main() {
   std::cout << "\n";
   printVector(vb1);
   std::cout << "\n\n";
+
+  std::vector<int> va2{1, 2, 3};
+  std::vector<int> vb2{4, 5};
+  printVector(sumPairWise(va2, vb2));
+  std::cout << "\n";
 }

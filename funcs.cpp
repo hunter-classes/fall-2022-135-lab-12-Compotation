@@ -43,3 +43,19 @@ void printVector(const std::vector<int> &vector) {
     }
   }
 }
+
+std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2) {
+  std::vector<int> res;
+  if (v1.size() > v2.size()) {
+    for (int i = 0; i < v1.size(); i++) {
+      // ternary operator to check if v2 has no element matching v1[i]
+      res.push_back(v1[i] + (i < v2.size() ? v2[i] : 0));
+    }
+  } else {
+    for (int i = 0; i < v2.size(); i++) {
+      // ternary operator to check if v1 has no element matching v2[i]
+      res.push_back(v2[i] + (i < v1.size() ? v1[i] : 0));
+    }
+  }
+  return res;
+}

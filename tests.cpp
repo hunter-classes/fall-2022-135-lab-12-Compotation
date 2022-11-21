@@ -61,3 +61,24 @@ TEST_CASE("task c") {
   CHECK_EQ(va4, expected4);
   CHECK(vb4.empty());
 }
+
+TEST_CASE("task d") {
+  std::vector<int> va1{1, 2, 3};
+  std::vector<int> vb1{4, 5};
+  std::vector<int> expected1{5, 7, 3};
+  CHECK_EQ(sumPairWise(va1, vb1), expected1);
+
+  std::vector<int> va2;
+  std::vector<int> vb2;
+  CHECK(sumPairWise(va2, vb2).empty());
+
+  std::vector<int> va3{2, -1, 5};
+  std::vector<int> vb3{10, -9, -2};
+  std::vector<int> expected3{12, -10, 3};
+  CHECK_EQ(sumPairWise(va3, vb3), expected3);
+
+  std::vector<int> va4{3, 2};
+  std::vector<int> vb4{8, -1, -2};
+  std::vector<int> expected4{11, 1, -2};
+  CHECK_EQ(sumPairWise(va4, vb4), expected4);
+}
