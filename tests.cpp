@@ -3,6 +3,19 @@
 #include "doctest.h"
 #include "funcs.h"
 
+TEST_CASE("task a") {
+  auto v1 = makeVector(10);
+  std::vector<int> expected1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  auto v2 = makeVector(1);
+  std::vector<int> expected2{0};
+  auto v3 = makeVector(0);
+  std::vector<int> expected3;
+
+  CHECK_EQ(v1, expected1);
+  CHECK_EQ(v2, expected2);
+  CHECK_EQ(v3, expected3);
+}
+
 TEST_CASE("task b") {
   std::vector<int> v1{1, 2, -1, 3, 4, -1, 6};
   auto res1 = goodVibes(v1);

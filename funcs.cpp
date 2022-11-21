@@ -1,5 +1,18 @@
 #include "funcs.h"
 
+std::vector<int> makeVector(int n) {
+  std::vector<int> res;
+  if (n < 1) {
+    return res;
+  }
+  
+  res.reserve(n);
+  for (int i = 0; i < n; i++) {
+    res.push_back(i);
+  }
+  return res;
+}
+
 std::vector<int> goodVibes(const std::vector<int> &v) {
   std::vector<int> result;
 
