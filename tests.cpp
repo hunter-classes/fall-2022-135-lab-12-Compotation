@@ -32,3 +32,32 @@ TEST_CASE("task b") {
   std::vector<int> expected3{7, 1, 8};
   CHECK_EQ(res3, expected3);
 }
+
+TEST_CASE("task c") {
+  std::vector<int> va1{1, 2, 3};
+  std::vector<int> vb1{4, 5};
+  std::vector<int> expected1{1, 2, 3, 4, 5};
+  gogeta(va1, vb1);
+  CHECK_EQ(va1, expected1);
+  CHECK(vb1.empty());
+
+  std::vector<int> va2;
+  std::vector<int> vb2;
+  gogeta(va2, vb2);
+  CHECK(va2.empty());
+  CHECK(vb2.empty());
+
+  std::vector<int> va3;
+  std::vector<int> vb3{-1, 3};
+  gogeta(va3, vb3);
+  std::vector<int> expected3{-1, 3};
+  CHECK_EQ(va3, expected3);
+  CHECK(vb3.empty());
+
+  std::vector<int> va4{4};
+  std::vector<int> vb4;
+  gogeta(va4, vb4);
+  std::vector<int> expected4{4};
+  CHECK_EQ(va4, expected4);
+  CHECK(vb4.empty());
+}

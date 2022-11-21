@@ -8,4 +8,12 @@ int main() {
   std::cout << "\n";
   printVector(makeVector(10));
   std::cout << "\n";
+
+  std::vector<int> va1{1, 2, 3};
+  std::vector<int> vb1{4, 5};
+  gogeta(va1, vb1);
+  printVector(va1);
+  std::cout << "\n";
+  printVector(vb1);
+  std::cout << "\n\n";
 }
