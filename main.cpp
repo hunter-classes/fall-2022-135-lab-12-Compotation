@@ -6,4 +6,6 @@ int main() {
   std::vector<int> res = goodVibes(v);
   printVector(res);
   std::cout << "\n";
+  printVector(makeVector(10));
+  std::cout << "\n";
 }
